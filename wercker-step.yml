@@ -1,0 +1,13 @@
+name: wp-cli
+version: 0.1.0
+description: Command line interface for WordPress.
+keywords:
+  - wordpress
+  - cli
+properties:
+  cmd:
+    type: string
+    required: false
+  user:
+    type: string
+    required: false

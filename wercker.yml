@@ -1,0 +1,14 @@
+box: php
+build:
+  steps:
+    - shellcheck:
+        files: run.sh
+    - script:
+        name: test
+        code: WERCKER_WP_CLI_CMD='cli version' ./run.sh
+    - script:
+        name: test user
+        code: WERCKER_WP_CLI_CMD='cli version' WERCKER_WP_CLI_USER=www-data ./run.sh
+    - script:
+        name: prepare output
+        code: rm -rf $WERCKER_ROOT/.git
