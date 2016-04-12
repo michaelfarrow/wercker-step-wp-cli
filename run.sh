@@ -1,7 +1,5 @@
 #!/bin/sh
 
-env
-
 WP_CLI_CACHE_DIR="$WERCKER_CACHE_DIR/weyforth/wpcli"
 WP_CLI_CACHE_BIN="$WP_CLI_CACHE_DIR/wp"
 
@@ -18,4 +16,4 @@ WP_CLI_DIR=${WERCKER_WP_CLI_DIR:-$WERCKER_ROOT}
 
 [ "$WP_CLI_USER" != "root" ] && chsh -s /bin/sh "$WP_CLI_USER"
 
-su -c "wp --allow-root --path \"$WP_CLI_DIR\" $WERCKER_WP_CLI_CMD" - "$WP_CLI_USER"
+su -c "wp --allow-root --path=\"$WP_CLI_DIR\" $WERCKER_WP_CLI_CMD" - "$WP_CLI_USER"
