@@ -1,5 +1,7 @@
 #!/bin/sh
 
+env
+
 WP_CLI_CACHE_DIR="$WERCKER_CACHE_DIR/weyforth/wpcli"
 WP_CLI_CACHE_BIN="$WP_CLI_CACHE_DIR/wp"
 
