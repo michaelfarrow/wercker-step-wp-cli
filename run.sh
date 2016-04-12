@@ -16,5 +16,4 @@ WP_CLI_DIR=${WERCKER_WP_CLI_DIR:-$WERCKER_ROOT}
 
 [ "$WP_CLI_USER" != "root" ] && chsh -s /bin/sh "$WP_CLI_USER"
 
-cd "$WP_CLI_DIR"
-su -c "wp --allow-root $WERCKER_WP_CLI_CMD" - "$WP_CLI_USER"
+su -c "wp --allow-root --path \"$WP_CLI_DIR\" $WERCKER_WP_CLI_CMD" - "$WP_CLI_USER"
